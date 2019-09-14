@@ -2,8 +2,8 @@ The idea of this app is to show the best japanese restaurants in São Paulo.
 
 Instructions:
 
-1 - run "pod install"
-2 - open "Torre.xcworkspace" file and build the project
+1 - run "pod install".
+2 - open "Torre.xcworkspace" file and build the project.
 
 
 =================================================================

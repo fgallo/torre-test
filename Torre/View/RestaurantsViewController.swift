@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RestaurantsViewController.swift
 //  Torre
 //
 //  Created by Fernando Gallo on 14/09/19.
@@ -8,13 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RestaurantsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
-
 }
-

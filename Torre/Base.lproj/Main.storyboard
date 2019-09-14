@@ -17,9 +17,30 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FCb-oI-9hb">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="wlp-Hy-tZb">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FCb-oI-9hb" secondAttribute="bottom" id="5E3-Ys-sUo"/>
+                            <constraint firstItem="FCb-oI-9hb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7eC-Vh-He4"/>
+                            <constraint firstItem="FCb-oI-9hb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CBt-F2-c9t"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FCb-oI-9hb" secondAttribute="trailing" id="RJF-IU-a6L"/>
+                            <constraint firstItem="wlp-Hy-tZb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="a6z-KR-zbU"/>
+                            <constraint firstItem="wlp-Hy-tZb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oOb-It-XG2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="wlp-Hy-tZb" id="VVO-zU-4PE"/>
+                        <outlet property="tableView" destination="FCb-oI-9hb" id="mY4-My-NNm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

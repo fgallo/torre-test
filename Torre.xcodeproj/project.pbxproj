@@ -22,6 +22,10 @@
 		A25885FF232D4BE300BD61F6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25885FE232D4BE300BD61F6 /* UIColor.swift */; };
 		A2588601232D4E4200BD61F6 /* ZomatoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2588600232D4E4200BD61F6 /* ZomatoAPI.swift */; };
 		A2588603232D4E8F00BD61F6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2588602232D4E8F00BD61F6 /* Constants.swift */; };
+		A2588605232D543D00BD61F6 /* RestaurantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2588604232D543D00BD61F6 /* RestaurantsViewModel.swift */; };
+		A2588607232D55A700BD61F6 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2588606232D55A700BD61F6 /* Restaurant.swift */; };
+		A2588609232D599500BD61F6 /* RestaurantResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2588608232D599500BD61F6 /* RestaurantResponse.swift */; };
+		A258860F232D5A0C00BD61F6 /* LocationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A258860E232D5A0C00BD61F6 /* LocationType.swift */; };
 		B338290EE332764C083242FB /* Pods_TorreUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 357AC6B741771466294A3C19 /* Pods_TorreUITests.framework */; };
 		CFCF7A092D63AB36DAE25505 /* Pods_TorreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1396B174733B6745E23A5756 /* Pods_TorreTests.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +74,10 @@
 		A25885FE232D4BE300BD61F6 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A2588600232D4E4200BD61F6 /* ZomatoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZomatoAPI.swift; sourceTree = "<group>"; };
 		A2588602232D4E8F00BD61F6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A2588604232D543D00BD61F6 /* RestaurantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewModel.swift; sourceTree = "<group>"; };
+		A2588606232D55A700BD61F6 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		A2588608232D599500BD61F6 /* RestaurantResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantResponse.swift; sourceTree = "<group>"; };
+		A258860E232D5A0C00BD61F6 /* LocationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationType.swift; sourceTree = "<group>"; };
 		CB17D440D898200C8DF7CF59 /* Pods-TorreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TorreTests/Pods-TorreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE499204298CE2CFA49C4541 /* Pods-TorreUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorreUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TorreUITests/Pods-TorreUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD2640091DB66827943F400E /* Pods-TorreUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorreUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TorreUITests/Pods-TorreUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,12 +148,13 @@
 			children = (
 				A25885F1232D484800BD61F6 /* AppDelegate */,
 				A25885EA232D47FD00BD61F6 /* Coordinator */,
+				A258860B232D59EA00BD61F6 /* Enums */,
 				A25885EB232D480500BD61F6 /* Extensions */,
 				A25885EC232D480900BD61F6 /* Helpers */,
 				A25885ED232D481200BD61F6 /* Model */,
 				A25885F0232D482200BD61F6 /* Service */,
-				A25885EF232D481900BD61F6 /* ViewModel */,
 				A25885EE232D481600BD61F6 /* View */,
+				A25885EF232D481900BD61F6 /* ViewModel */,
 				A25885C0232D474300BD61F6 /* Main.storyboard */,
 				A25885C3232D474500BD61F6 /* Assets.xcassets */,
 				A25885C5232D474500BD61F6 /* LaunchScreen.storyboard */,
@@ -202,6 +211,8 @@
 		A25885ED232D481200BD61F6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A2588606232D55A700BD61F6 /* Restaurant.swift */,
+				A2588608232D599500BD61F6 /* RestaurantResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,6 +228,7 @@
 		A25885EF232D481900BD61F6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A2588604232D543D00BD61F6 /* RestaurantsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -235,6 +247,14 @@
 				A25885BC232D474300BD61F6 /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A258860B232D59EA00BD61F6 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A258860E232D5A0C00BD61F6 /* LocationType.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		A699670347BA34D5197166D4 /* Pods */ = {
@@ -480,14 +500,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2588607232D55A700BD61F6 /* Restaurant.swift in Sources */,
 				A25885FB232D4A2700BD61F6 /* UIStoryboard.swift in Sources */,
 				A25885FF232D4BE300BD61F6 /* UIColor.swift in Sources */,
 				A25885F9232D499B00BD61F6 /* RestaurantsCoordinator.swift in Sources */,
 				A25885F7232D494E00BD61F6 /* AppCoordinator.swift in Sources */,
 				A25885BD232D474300BD61F6 /* AppDelegate.swift in Sources */,
 				A25885F5232D493200BD61F6 /* RestaurantsViewController.swift in Sources */,
+				A2588609232D599500BD61F6 /* RestaurantResponse.swift in Sources */,
 				A2588601232D4E4200BD61F6 /* ZomatoAPI.swift in Sources */,
+				A2588605232D543D00BD61F6 /* RestaurantsViewModel.swift in Sources */,
 				A25885F3232D48C600BD61F6 /* Coordinator.swift in Sources */,
+				A258860F232D5A0C00BD61F6 /* LocationType.swift in Sources */,
 				A2588603232D4E8F00BD61F6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

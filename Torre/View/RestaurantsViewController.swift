@@ -9,9 +9,74 @@
 import UIKit
 
 class RestaurantsViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    
+    var viewModel: RestaurantsViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+        getRestaurants()
+    }
+    
+    
+    // MARK: - Setup
+    
+    private func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+    
+    // MARK: - API
+    
+    private func getRestaurants() {
+        activityIndicatorView.startAnimating()
+        viewModel.fetchRestaurants()
     }
 
+}
+
+
+// MARK: - UITableView DataSource
+
+extension RestaurantsViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfRestaurants()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+}
+
+
+// MARK: - UITableView Delegate
+
+extension RestaurantsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO: push to details
+    }
+    
+}
+
+
+// MARK: - FetchRestaurantsDelegate
+
+extension RestaurantsViewController: FetchRestaurantsDelegate {
+    
+    func fetchRestaurantsSuccess() {
+        activityIndicatorView.stopAnimating()
+        tableView.reloadData()
+    }
+    
+    func fetchRestaurantsFailure() {
+        activityIndicatorView.stopAnimating()
+    }
+    
 }

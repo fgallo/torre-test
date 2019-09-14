@@ -40,8 +40,6 @@ class RestaurantsViewModel {
                                                             do {
                                                                 let restaurantResponse = try JSONDecoder().decode(RestaurantResponse.self, from: response.data)
                                                                 self.restaurants.append(contentsOf: restaurantResponse.restaurants)
-                                                                print("=============")
-                                                                print(self.restaurants)
                                                                 DispatchQueue.main.async {
                                                                     self.fetchDelegate?.fetchRestaurantsSuccess()
                                                                 }
@@ -59,6 +57,11 @@ class RestaurantsViewModel {
     
     func numberOfRestaurants() -> Int {
         return restaurants.count
+    }
+    
+    func viewModelForItemAt(indexPath: IndexPath) -> RestaurantCellViewModel {
+        let restaurant = restaurants[indexPath.row]
+        return RestaurantCellViewModel(restaurant: restaurant)
     }
     
 }

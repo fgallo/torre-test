@@ -27,6 +27,8 @@ class RestaurantsViewController: UIViewController {
     private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.register(UINib(nibName: String(describing: RestaurantTableViewCell.self), bundle: nil),
+                           forCellReuseIdentifier: RestaurantTableViewCell.cellIdentifier)
     }
     
     
@@ -49,7 +51,13 @@ extension RestaurantsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantTableViewCell.cellIdentifier,
+                                                 for: indexPath) as! RestaurantTableViewCell
+        
+        cell.viewModel = viewModel.viewModelForItemAt(indexPath: indexPath)
+        cell.configure()
+        
+        return cell
     }
     
 }

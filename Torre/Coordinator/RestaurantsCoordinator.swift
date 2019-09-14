@@ -19,7 +19,7 @@ class RestaurantsCoordinator: Coordinator {
     
     func start() {
         let restaurantsViewController = UIStoryboard.main.restaurantsViewController
-        restaurantsViewController.title = "Restaurants"
+        restaurantsViewController.title = "Japanese Restaurants"
         
         let restaurantsViewModel = RestaurantsViewModel(provider: ZomatoProvider)
         restaurantsViewController.viewModel = restaurantsViewModel

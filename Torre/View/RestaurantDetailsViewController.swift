@@ -48,6 +48,7 @@ class RestaurantDetailsViewController: UIViewController {
                     .cacheOriginalImage
                 ])
         } else {
+            coverImageView.contentMode = .scaleAspectFit
             coverImageView.image = UIImage(named: "placeholder")
         }
     }
@@ -60,7 +61,6 @@ class RestaurantDetailsViewController: UIViewController {
             annotation.title = self.viewModel.restaurantName()
             self.mapView.addAnnotation(annotation)
             self.mapView.showAnnotations([annotation], animated: false)
-            self.mapView.isUserInteractionEnabled = false
         }
     }
 

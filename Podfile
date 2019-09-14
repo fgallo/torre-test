@@ -6,6 +6,7 @@ target 'Torre' do
   use_frameworks!
 
   # Pods for Torre
+  pod 'Kingfisher'
   pod 'Moya', '~> 13.0'
 
   target 'TorreTests' do

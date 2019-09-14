@@ -21,6 +21,17 @@ class RestaurantsViewController: UIViewController {
         getRestaurants()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     
     // MARK: - Setup
     
@@ -68,7 +79,7 @@ extension RestaurantsViewController: UITableViewDataSource {
 extension RestaurantsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: push to details
+        viewModel.showRestaurantDetailsAt(indexPath: indexPath)
     }
     
 }

@@ -12,6 +12,7 @@ class RestaurantsCoordinator: Coordinator {
     
     private let presenter: UINavigationController
     private var restaurantsViewController: RestaurantsViewController?
+    private var restaurantDetailsCoordinator: RestaurantDetailsCoordinator?
     
     init(presenter: UINavigationController) {
         self.presenter = presenter
@@ -24,9 +25,21 @@ class RestaurantsCoordinator: Coordinator {
         let restaurantsViewModel = RestaurantsViewModel(provider: ZomatoProvider)
         restaurantsViewController.viewModel = restaurantsViewModel
         restaurantsViewModel.fetchDelegate = restaurantsViewController
+        restaurantsViewModel.navigationDelegate = self
         presenter.pushViewController(restaurantsViewController, animated: true)
         
         self.restaurantsViewController = restaurantsViewController
+    }
+    
+}
+
+extension RestaurantsCoordinator: RestaurantsNavigationDelegate {
+    
+    func restaurantSelected(_ restaurant: Restaurant) {
+        let restaurantDetailsCoordinator = RestaurantDetailsCoordinator(presenter: presenter, restaurant: restaurant)
+        restaurantDetailsCoordinator.start()
+        
+        self.restaurantDetailsCoordinator = restaurantDetailsCoordinator
     }
     
 }

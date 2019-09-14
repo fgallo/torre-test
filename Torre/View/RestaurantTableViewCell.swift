@@ -57,7 +57,7 @@ class RestaurantTableViewCell: UITableViewCell {
                     .cacheOriginalImage
                 ])
         } else {
-            imageView.image = nil
+            imageView.image = UIImage(named: "placeholder")
         }
     }
     

@@ -14,12 +14,17 @@ protocol FetchRestaurantsDelegate: class {
     func fetchRestaurantsFailure()
 }
 
+protocol RestaurantsNavigationDelegate: class {
+    func restaurantSelected(_ restaurant: Restaurant)
+}
+
 class RestaurantsViewModel {
     
     private let provider: MoyaProvider<ZomatoAPI>
     private var restaurants: [Restaurant]
     
     weak var fetchDelegate: FetchRestaurantsDelegate?
+    weak var navigationDelegate: RestaurantsNavigationDelegate?
     
     init(provider: MoyaProvider<ZomatoAPI>) {
         self.provider = provider
@@ -62,6 +67,11 @@ class RestaurantsViewModel {
     func viewModelForItemAt(indexPath: IndexPath) -> RestaurantCellViewModel {
         let restaurant = restaurants[indexPath.row]
         return RestaurantCellViewModel(restaurant: restaurant)
+    }
+    
+    func showRestaurantDetailsAt(indexPath: IndexPath) {
+        let restaurant = restaurants[indexPath.row]
+        navigationDelegate?.restaurantSelected(restaurant)
     }
     
 }

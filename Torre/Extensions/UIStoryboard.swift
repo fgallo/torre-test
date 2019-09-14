@@ -22,4 +22,12 @@ extension UIStoryboard {
         return viewController
     }
     
+    var restaurantDetailsViewController: RestaurantDetailsViewController {
+        guard let viewController =
+            UIStoryboard.main.instantiateViewController(withIdentifier: "RestaurantDetailsViewController") as? RestaurantDetailsViewController else {
+                fatalError("RestaurantDetailsViewController couldn't be found in Storyboard file")
+        }
+        return viewController
+    }
+    
 }

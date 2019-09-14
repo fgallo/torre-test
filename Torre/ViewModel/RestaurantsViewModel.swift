@@ -40,6 +40,8 @@ class RestaurantsViewModel {
                                                             do {
                                                                 let restaurantResponse = try JSONDecoder().decode(RestaurantResponse.self, from: response.data)
                                                                 self.restaurants.append(contentsOf: restaurantResponse.restaurants)
+                                                                print("=============")
+                                                                print(self.restaurants)
                                                                 DispatchQueue.main.async {
                                                                     self.fetchDelegate?.fetchRestaurantsSuccess()
                                                                 }

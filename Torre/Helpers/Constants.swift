@@ -17,9 +17,11 @@ struct Constants {
     
     struct Parameters {
         static let userKey = "user-key"
-        static let locationId = "entity-id"
-        static let locationType = "entity-type"
+        static let locationId = "entity_id"
+        static let locationType = "entity_type"
         static let cuisines = "cuisines"
+        static let sort = "sort"
+        static let order = "order"
     }
     
     struct Cuisines {

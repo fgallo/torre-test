@@ -42,7 +42,9 @@ extension ZomatoAPI: TargetType {
         case .searchRestaurants(let locationId, let locationType, let cuisineId):
             return .requestParameters(parameters: [Constants.Parameters.locationId: locationId,
                                                    Constants.Parameters.locationType: locationType,
-                                                   Constants.Parameters.cuisines: cuisineId],
+                                                   Constants.Parameters.cuisines: cuisineId,
+                                                   Constants.Parameters.sort: "rating",
+                                                   Constants.Parameters.order: "desc"],
                                       encoding: URLEncoding.default)
         }
     }

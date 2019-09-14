@@ -36,6 +36,7 @@ class RestaurantsViewController: UIViewController {
     // MARK: - Setup
     
     private func setupTableView() {
+        tableView.isHidden = true
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: String(describing: RestaurantTableViewCell.self), bundle: nil),
@@ -91,6 +92,7 @@ extension RestaurantsViewController: FetchRestaurantsDelegate {
     
     func fetchRestaurantsSuccess() {
         activityIndicatorView.stopAnimating()
+        tableView.isHidden = false
         tableView.reloadData()
     }
     

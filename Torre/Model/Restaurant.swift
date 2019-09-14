@@ -12,6 +12,7 @@ struct Restaurant: Decodable {
     
     let id: String
     let name: String
+    let coverImage: String
     let priceRange: Int
     let location: Location
     let rate: Rate
@@ -20,6 +21,7 @@ struct Restaurant: Decodable {
     enum CodingKeys: String, CodingKey {
         case id
         case name
+        case coverImage = "featured_image"
         case priceRange = "price_range"
         case location
         case rate = "user_rating"
@@ -40,6 +42,7 @@ struct Restaurant: Decodable {
                                                            forKey: .restaurant)
         try id =  restaurantContainer.decode(String.self, forKey: .id)
         try name =  restaurantContainer.decode(String.self, forKey: .name)
+        try coverImage =  restaurantContainer.decode(String.self, forKey: .coverImage)
         try priceRange = restaurantContainer.decode(Int.self, forKey: .priceRange)
         try location = restaurantContainer.decode(Location.self, forKey: .location)
         try rate = restaurantContainer.decode(Rate.self, forKey: .rate)

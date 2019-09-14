@@ -10,4 +10,6 @@ import Foundation
 
 struct Location: Decodable {
     let address: String
+    let latitude: String
+    let longitude: String
 }

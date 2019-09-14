@@ -22,4 +22,12 @@ struct Constants {
         static let cuisines = "cuisines"
     }
     
+    struct Cuisines {
+        static let japanese = 60
+    }
+    
+    struct Cities {
+        static let saoPaulo = 67
+    }
+    
 }
